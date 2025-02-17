@@ -4,8 +4,10 @@ import { getUser } from "@prisma/client/sql";
 
 const page = async () => {
     const users = await prisma.$queryRawTyped(getUser());
+    const data = JSON.parse(JSON.stringify(users))
   return (
-    console.log(users)
+
+    console.log(data)
   )
 
 }
