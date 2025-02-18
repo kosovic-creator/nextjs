@@ -1,1 +1,1 @@
-select email from "User"
+select * from "User"

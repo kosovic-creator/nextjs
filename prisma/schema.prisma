@@ -6,7 +6,7 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["typedSql","fullTextSearchPostgres"]
+  previewFeatures = ["typedSql","fullTextSearchPostgres","postgresqlExtensions"]
 
 }
 
@@ -43,4 +43,12 @@ model Book{
   published String
   authorId Author @relation(fields: [bookId], references: [id])
   bookId Int
+}
+model Item {
+  id Int @id @default(autoincrement())
+  name String
+  price Int
+  tax Int
+  total Int
+
 }
